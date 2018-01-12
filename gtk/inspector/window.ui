@@ -447,6 +447,14 @@
                     <property name="title" translatable="yes">Statistics</property>
                   </packing>
                 </child>
+                <child>
+                  <object class="GtkInspectorLogs">
+                  </object>
+                  <packing>
+                    <property name="name">logs</property>
+                    <property name="title" translatable="yes">Logs</property>
+                  </packing>
+                </child>
               </object>
             </child>
           </object>

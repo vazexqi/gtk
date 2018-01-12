@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="gtk40">
+  <object class="GtkTextBuffer" id="text">
+  </object>
+  <template class="GtkInspectorLogs" parent="GtkBox">
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">6</property>
+        <property name="margin">6</property>
+        <child>
+          <object class="GtkToggleButton" id="disable_button">
+            <property name="relief">none</property>
+            <property name="tooltip-text" translatable="yes">Disable logging</property>
+            <property name="icon-name">media-playback-pause-symbolic</property>
+            <signal name="toggled" handler="disable_toggled"/>
+          </object>
+          <packing>
+            <property name="pack-type">start</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="clear_button">
+            <property name="relief">none</property>
+            <property name="tooltip-text" translatable="yes">Clear</property>
+            <property name="icon-name">edit-clear-all-symbolic</property>
+            <signal name="clicked" handler="clear_clicked"/>
+          </object>
+          <packing>
+            <property name="pack-type">start</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="save_button">
+            <property name="relief">none</property>
+            <property name="tooltip-text" translatable="yes">Save the logs</property>
+            <property name="icon-name">document-save-symbolic</property>
+            <signal name="clicked" handler="save_clicked"/>
+          </object>
+          <packing>
+            <property name="pack-type">start</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkMenuButton">
+            <property name="relief">none</property>
+            <property name="icon-name">open-menu-symbolic</property>
+            <property name="popover">popover</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow">
+        <property name="hscrollbar-policy">never</property>
+        <property name="vscrollbar-policy">automatic</property>
+        <property name="expand">True</property>
+        <child>
+          <object class="GtkTextView" id="view">
+            <property name="wrap-mode">word</property>
+            <property name="buffer">text</property>
+            <property name="monospace">True</property>
+            <property name="has-focus">True</property>
+            <property name="left-margin">6</property>
+            <property name="right-margin">6</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+  <object class="GtkPopover" id="popover">
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="margin">10</property>
+        <child>
+          <object class="GtkCheckButton" id="events">
+            <property name="label">Events</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="misc">
+            <property name="label">Misc</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="dnd">
+            <property name="label">Drag-and-Drop</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="input">
+            <property name="label">Input</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="cursor">
+            <property name="label">Cursor</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="eventloop">
+            <property name="label">Event loop</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="frames">
+            <property name="label">Frames</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="settings">
+            <property name="label">Settings</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="opengl">
+            <property name="label">OpenGL</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="vulkan">
+            <property name="label">Vulkan</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="selection">
+            <property name="label">Settings</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="clipboard">
+            <property name="label">Clipboard</property>
+            <signal name="toggled" handler="flag_toggled"/>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
